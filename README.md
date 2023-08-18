@@ -179,6 +179,36 @@
 
     ![image](https://github.com/rafopm/oci-app-deploy/assets/5562967/2b56549b-d3c6-4055-b32e-960afc3b1bd2)
 
+    Solo sera necesario colocar el nombre, las otras configuraciones las dejamos como esta para que se mantenga siempre gratis.
+
+    Una vez creada la base de datos se debe seleccionar la opcion "View all database actions" para revisar las opciones disponibles:
+    ![image](https://github.com/rafopm/oci-app-deploy/assets/5562967/1a7fbc61-0497-4a2f-8074-a412bcd72d35)
+
+    ![image](https://github.com/rafopm/oci-app-deploy/assets/5562967/874e6361-3a1a-4119-9332-8e8810e31583)
+
+
+12. Ingresamos a shell con los datos de la primera instancia:
+    "ssh opc@TUIPUBLICA -i .ssh/cloudshellkey"
+
+    Instalamos GIT
+    sudo dnf install git
+
+   Clonamos una app de git
+   git clone https://tuappengit
+
+   Instalamos node, dependiendo de la version que corresponda a tu aplicacion
+   sudo dnf install @nodejs:16
+   sudo dnf list installed | grep instantclient
+
+   
+   
+    
+    
+
+    
+
+
+
     
 
 
