@@ -152,6 +152,36 @@
    
    echo "<h1>Hola Mundo 2</h1>" >> /var/www/html/index.html
 
+   Deberias tener 2 instancias corriendo:
+   
+   ![image](https://github.com/rafopm/oci-app-deploy/assets/5562967/1a0aa712-ddcc-4da9-8cde-7bbf49e198be)
+
+   Como vamos a usar los recursos gratuitos lo dejamos todos como esta y solo seleccionamos nuestra VCN:
+   ![image](https://github.com/rafopm/oci-app-deploy/assets/5562967/aab3bbd6-558b-4db5-b12a-b6bf3cd0b1ae)
+
+   Luego agregamos Backends y seleccionamos nuestras 2 instancias creadas previamente:
+   ![image](https://github.com/rafopm/oci-app-deploy/assets/5562967/e5d3816e-146f-4349-98fd-942b594e5456)
+
+   Luego viene la configuracion de Listener y seleccionamos HTTP
+   ![image](https://github.com/rafopm/oci-app-deploy/assets/5562967/a385ee2b-d69b-4d65-91c3-e469bf4c871d)
+
+   En la seccion de logs dejamos las opciones por defecto:
+   ![image](https://github.com/rafopm/oci-app-deploy/assets/5562967/40cc950e-145e-418f-b35b-73d710d4ef52)
+
+   Con la ip publica podemos verificar que alterna el acceso a las dos instancias de forma alterna:
+
+   ![image](https://github.com/rafopm/oci-app-deploy/assets/5562967/923ba443-0216-4065-b97b-3df4591b45b4)
+
+   
+
+
+   
+
+
+   
+
+
+
 
     
 
