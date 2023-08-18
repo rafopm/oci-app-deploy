@@ -172,7 +172,14 @@
 
    ![image](https://github.com/rafopm/oci-app-deploy/assets/5562967/923ba443-0216-4065-b97b-3df4591b45b4)
 
-   
+
+
+11. Creamos nuestra base de datos JSON
+    ![image](https://github.com/rafopm/oci-app-deploy/assets/5562967/c28e9c4e-105e-4dc5-8958-930a4317005c)
+
+    ![image](https://github.com/rafopm/oci-app-deploy/assets/5562967/2b56549b-d3c6-4055-b32e-960afc3b1bd2)
+
+    
 
 
    
