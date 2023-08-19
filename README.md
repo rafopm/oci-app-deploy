@@ -197,8 +197,88 @@
    git clone https://tuappengit
 
    Instalamos node, dependiendo de la version que corresponda a tu aplicacion
+   
    sudo dnf install @nodejs:16
+
+
+   Ingresamos a la carpeta de la aplicacion
+
+   cd nombreDeLaCarpeta
+
+   Instalamos dependencias:
+   
+   npm install
+
+   Instalacmos InstantClient
+   
    sudo dnf list installed | grep instantclient
+
+   sudo dnf install oracle-instantclient-release-el8
+
+   sudo dnf install oracle-instantclient-basic
+
+   DEscargamos el Wallet
+
+   Vamos a panel izquierdo -> Oracle DB -> Autonomous DB -> DoguitoDB -> DB Connection -> Download wallet -> pw=LaMismaDeLaDatabase -> Download
+
+
+   Salimos del usuario loqueado con "exit"
+
+
+   Cargamos el archivo de Wallet
+
+   Panel superior izquierdo o engranaje en parte superior derecha de cloudshell -> Upload -> Cargamos archivo de wallet que acabamos de descargar -> Hide
+
+
+   copiamos el archivo a la raiz de opc
+
+   scp -i .ssh/cloudshellkey Wallet_devdb.zip opc@129.151.122.13:/home/opc
+
+
+   accedemos nuevamente con el usuario opc
+
+   ssh opc@TUIP -i .ssh/cloudshellkey
+
+   verificamos que el archivo del wallet se copio correctamente
+
+   ls
+
+   copiamos el wallet a una ubicacion predeterminada
+   
+   sudo cp Wallet_*.zip /usr/lib/oracle/21/client64/lib/network/admin
+   
+  nos ubicamos en la carpeta
+
+  cd /usr/lib/oracle/21/client64/lib/network/admin
+
+  descomprimimos
+  sudo unzip -B Wallet_algunnombre.zip
+
+
+agregamos las variables de entorno
+
+export DB_USER=ADMIN export DB_PASSWORD=tuclave export CONNECT_STRING=devdb_high
+
+
+Agregamos el puerto 3000 para que reciba trafico
+
+sudo firewall-cmd --permanent --add-port=3000/tcp
+
+
+reiniciamos el firewall
+
+sudo firewall-cmd --reload
+
+Agregamos el puerto 3000 a security list
+
+vm1 -> public subnet VCN1 -> Default security list -> Add ingress rule -> Source CDIR=0.0.0.0/0 -> Port=3000 -> Add rule
+
+
+Iniciamos el proyecto
+
+npm start
+
+
 
    
    
