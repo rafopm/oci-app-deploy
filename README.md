@@ -278,6 +278,45 @@ Iniciamos el proyecto
 
 npm start
 
+Iniciar el servicio que tiene la siguiente estructura
+--------------------------------------------------------------------
+[Unit]
+Description=Doguito API Service
+After=network.target
+
+[Service]
+Environment="DB_USER=ADMIN"
+Environment="DB_PASSWORD=???"
+Environment="CONNECT_STRING=???"
+Type=simple
+User=opc
+ExecStart=/usr/bin/node /home/opc/doguito-api-es/bin/www
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+---------------------------------------------------------
+
+Modificamos el archivo si es necesario con:
+
+vim doguito-api.service
+
+Primero copiamos el archivo a donde corresponde
+
+sudo cp doguito-api.service /lib/systemd/system
+
+cd /lib/systemd/system
+
+sudo systemctl daemon-reload
+
+sudo systemctl status doguito-api.service
+
+sudo systemctl start doguito-api.service
+
+sudo systemctl enable doguito-api.service
+
+
+
 
 
    
